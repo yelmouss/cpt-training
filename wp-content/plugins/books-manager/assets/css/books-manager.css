@@ -1,0 +1,48 @@
+/* Conteneur principal avec espacement vertical */
+.books-manager-list {
+    padding: 20px 0;
+}
+
+/* Grille responsive pour les cartes de livres 
+   - auto-fill : remplit automatiquement la grille
+   - minmax(300px, 1fr) : largeur minimum de 300px, maximum 1fr */
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px; /* Espacement entre les cartes */
+}
+
+/* Style de chaque carte de livre */
+.book-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px; /* Coins arrondis */
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Ombre légère */
+}
+
+/* Style du titre du livre */
+.book-title {
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+/* Style des paragraphes dans la section meta */
+.book-meta p {
+    margin: 5px 0;
+}
+
+
+/* Style de la description du livre */
+.book-description {
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Style du message "aucun livre trouvé" */
+.no-books {
+    text-align: center;
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 5px;
+}

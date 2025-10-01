@@ -47,6 +47,9 @@ class BooksManager
     {
         // Hook 'init' : s'exécute quand WordPress initialise
         add_action('init', [$this, 'register_books_cpt']);
+        
+        // Hook pour charger les styles CSS
+        add_action('wp_enqueue_scripts', [$this, 'enqueue_styles']);
 
         // Hook 'acf/init' : s'exécute quand ACF est chargé
         add_action('acf/init', [$this, 'register_book_fields']);
@@ -154,6 +157,18 @@ class BooksManager
                 ]
             ]
         ]);
+    }
+
+    /**
+     * Charge les styles CSS du plugin
+     */
+    public function enqueue_styles() {
+        wp_enqueue_style(
+            'books-manager-styles',
+            plugins_url('assets/css/books-manager.css', __FILE__),
+            array(),
+            '1.0.0'
+        );
     }
 }
 
